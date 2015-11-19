@@ -26,7 +26,7 @@ module FlashCards
       @decks = []
     end
 
-    def <<(deck)
+    def << deck
       @decks << deck
     end
 
@@ -63,7 +63,7 @@ module FlashCards
     # end
 
     def correct?(guess)
-      guess == @back
+      @back == guess
     end
 
     def play
@@ -84,7 +84,7 @@ module FlashCards
       @cards = []
     end
 
-    def <<(card)
+    def << card
       @cards << card
     end
 
