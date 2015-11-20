@@ -1,0 +1,9 @@
+Dashboard
+<%= form_for @shout do |form| %>
+  <%= form.text_field :body, placeholder: 'shouts here' %>
+  <%= form.submit 'Shout!' %>
+<% end %>
+
+<!--这里需要一个shouts的局部视图-->
+<%= render @shouts %>
+
