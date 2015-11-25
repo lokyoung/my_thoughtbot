@@ -9,7 +9,6 @@ class PhotoShoutsController < ApplicationController
       flash.alert = 'Can\'t shout!'
       redirect_to dashboard_path
     end
-
   end
 
   private

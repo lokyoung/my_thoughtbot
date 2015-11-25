@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'photo_shouts/create'
-
-  get 'shouts/create'
 
   root to: 'homes#show', via: :get
   # 单例资源使用resource
   resource :dashboard, only: [:show]
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :index] do
+    post 'follow' => 'following_relationships#create'
+    delete 'follow' => 'following_relationships#destroy'
+  end
   resources :shouts, only: [:create, :show]
   resources :text_shouts, only: [:create]
   resources :photo_shouts, only: [:create]
